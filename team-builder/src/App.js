@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 import Member from './Member';
+import Form from './Form';
 import './App.css';
 
 function App() {
@@ -12,7 +13,17 @@ function App() {
     name: 'Christina',
     email: 'christina@lambdaschool.com',
     role: 'instructor'
-  }])
+  }]);
+
+  const addNewMember = member => {
+    const newMember = {
+      name: member.name,
+      email: member.email,
+      role: member.role
+    };
+
+    setTeam([...team, newMember]);
+  }
 
   return (
     <div className="App">     
@@ -21,6 +32,7 @@ function App() {
           return <Member data={member} />
         })}
       </div>
+      <Form addNewMember={addNewMember}/>
     </div>
   )
 }

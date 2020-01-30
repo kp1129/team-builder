@@ -6,7 +6,6 @@ const Member = (props) => (
         <p>Name: {props.data.name}</p>
         <p>Email: {props.data.email} </p>
         <p>Role: {props.data.role}</p>
-        {console.log(props.data)}
     </div>
 );
 
